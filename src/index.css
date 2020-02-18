@@ -1,0 +1,103 @@
+body{
+  background-color: black;
+}
+
+.game-area{
+  background-color: darkolivegreen;
+  position: relative;
+  margin: 50px auto 1em auto;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #fff;
+}
+
+.score{
+  text-align: center;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  margin: 10px auto;
+}
+
+.snake-body{
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #000;
+  z-index: 2;
+}
+
+.snake-food{
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: red;
+  z-index: 1;
+}
+
+.game-over{
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
+  font-size: 2em;  
+}
+
+.game-over > h1{
+  color: red;
+  font-size: 150%;
+  margin: 2em 0 .5em 0;
+}
+
+.game-over > h3{
+  font-size: 110%;
+}
+
+.game-over > button{
+  font-family: 'Press Start 2P', cursive;
+  font-size: .35em;
+  padding: .7em;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  margin: 0 .3em;
+}
+
+button:hover{
+  background-color: darkgray;  
+}
+
+button:disabled{
+  background-color: darkslategrey;
+}
+
+.highscore-table, th, td{
+  text-align: center;
+  font-size: .8em;
+  margin: auto;
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+
+.highscore-table > tbody> tr > td{
+  padding: .5em;
+}
+
+.inputName{
+  margin: 1em;
+  padding: 5px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: .4em;
+  width: 20em;
+  height: 2em;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .game-area{
+    width: 300px;
+    height: 300px;
+  }
+}
