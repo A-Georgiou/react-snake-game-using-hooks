@@ -1,5 +1,16 @@
+html{
+  height: 100%;
+ }
+
 body{
   background-color: black;
+  background-position: top;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-size: cover;
+}
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
 }
 
 .game-area{
@@ -8,15 +19,14 @@ body{
   margin: 50px auto 1em auto;
   width: 600px;
   height: 600px;
-  border: 1px solid #fff;
+  border: 2px solid white;
 }
 
 .score{
   text-align: center;
-  margin: 0;
   font-family: 'Press Start 2P', cursive;
   color: white;
-  margin: 10px auto;
+  margin: 1em auto 1em auto;
 }
 
 .snake-body{
@@ -25,6 +35,49 @@ body{
   height: 2%;
   background-color: #000;
   z-index: 2;
+}
+
+.hold{
+  margin: auto;
+}
+
+.input{
+  position:relative;
+  background-image: url('./images/gamepad.png');
+  background-position: top;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width:12em;
+  height:12em;
+}
+
+.input > div{
+  width: 100%;
+  height: 100%;
+}
+
+.UP{
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.LEFT{
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.RIGHT{
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.DOWN{
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .snake-food{
@@ -72,7 +125,7 @@ button:disabled{
 
 .highscore-table, th, td{
   text-align: center;
-  font-size: .8em;
+  font-size: .6em;
   margin: auto;
   border: 2px solid white;
   border-collapse: collapse;
@@ -95,9 +148,31 @@ button:disabled{
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-height: 900px){
+
+  body{
+    background: none;
+  }
+
+  html{
+    height: 100%;
+    background: rgb(171,171,185);
+    background: linear-gradient(180deg, rgba(171,171,185,1) 0%, rgba(139,139,147,1) 36%, rgba(134,134,134,1) 100%);
+  }
+
+  .score{
+    font-size: 1em;
+    margin: 1em auto;
+  }
+
   .game-area{
-    width: 300px;
-    height: 300px;
+    margin: 10vw auto 1em auto; 
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .input{
+    width: 50vw;
+    height: 50vw;
   }
 }

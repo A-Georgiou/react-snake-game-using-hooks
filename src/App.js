@@ -57,6 +57,36 @@ function App() {
   }, [clicked]);
 
   useEffect(() => {
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClick);
+    };
+  });
+
+  const handleClick = (e) => {
+    let clickedDir = e.target.className;
+    switch(clickedDir){
+      case "UP":
+        if(direction !== "DOWN") setDirection("UP");
+        break;
+      case "DOWN":
+        if(direction !== "UP") setDirection("DOWN");
+        break;
+      case "LEFT":
+        if(direction !== "RIGHT") setDirection("LEFT");
+        break;
+      case "RIGHT":
+        if(direction !== "LEFT") setDirection("RIGHT");
+        break;
+      default:
+        break;
+    }
+  }
+  
+
+  useEffect(() => {
     let head = snakeDots[snakeDots.length-1]
     checkIfEaten(head);
     checkOutOfBounds(head);
@@ -211,6 +241,12 @@ function App() {
         <Food dot={food}></Food>
       </div>
       <h3 className="score">Score: {(snakeDots.length-2)*10}</h3>
+      <div className="input">
+        <div className="UP" onClick={handleClick}></div>
+        <div className="LEFT"></div>
+        <div className="RIGHT"></div>
+        <div className="DOWN"></div>
+      </div>
     </div>
     );
     
