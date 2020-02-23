@@ -6,9 +6,9 @@ import Firebase from "firebase"
 
 
 Firebase.initializeApp({
-  apiKey: 'AIzaSyD7dW7uuHcjshc12wmfrz5IC-eKzXVXhU0',
-  authDomain: 'https://react-snake-4f75f.firebaseio.com/',
-  projectId: 'react-snake-4f75f'
+  apiKey: INSERT API KEY,
+  authDomain: INSERT AUTH DOMAIN,
+  projectId: INSERT PROJECT ID
 });
 
 let db = Firebase.firestore();
